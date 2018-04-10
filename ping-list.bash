@@ -24,6 +24,9 @@ bad="ping_bad"
 ping_68="ping_dns"
 ping_count=1
 
+#################
+# Usage function
+#################
 function usage {
 cat << EOF
 usage: $0 [filename]
@@ -37,12 +40,19 @@ EOF
 
 }
 
+################################################
+# Check for parameter and make sure it is a file
+################################################
+
 if [ $# -ne 1 ]||[  ! -f $1 ]
 then
    usage
    exit
 fi
 
+##################################
+# Loop thourgh each ip in the file
+#################################
 for _IP in $(cat ${1})
 do
 ping -q -c $ping_count $_IP >/dev/null 2>&1 
