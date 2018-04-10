@@ -52,14 +52,17 @@ fi
 
 ##################################
 # Loop thourgh each ip in the file
+# If host is reachable ping return exit code of 0
+# If the host is not reachable ping retun exit code($?) of 68
 #################################
 for _IP in $(cat ${1})
 do
 ping -q -c $ping_count $_IP >/dev/null 2>&1 
-if [ $? -eq 0 ]
+ping_exit_status=$?
+if [ $ping_exit_status -eq 0 ]
 then
    echo "$_IP" >> $good
-elif [ $? -eq 68 ]
+elif [ $ping_exit_status -eq 68 ]
 then
    echo "$_IP" >> $ping_68
 else
