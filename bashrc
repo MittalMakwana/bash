@@ -18,10 +18,10 @@ alias root='sudo -i'
 alias su='sudo -i
 
 # find command
-alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5" # Find top 5 big files
+alias findbig='find . -type f -exec ls -s {} \; | sort -n -r | head -5' # Find top 5 big files
 
 # Grep for a bash process
-alias psg="ps -aux Â¦ grep bash"
+alias psg='ps -aux ¦ grep bash'
 
 # To clear all the history and screen
 alias hcl='history -c; clear'
