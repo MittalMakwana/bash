@@ -17,7 +17,7 @@ alias Vim="vim `ls -t | head -1`" # Open last modified file in vim
 alias root='sudo -i'
 alias su='sudo -i
 
-#find alisa
+# find command
 alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5" # Find top 5 big files
 
 # Grep for a bash process
